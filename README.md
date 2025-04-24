@@ -110,10 +110,53 @@
   <div>
     <label>ประเภทหวย:</label><br>
     <select id="lotterySelect" onchange="updatePreview()">
+      <option value="ลาวเอ็กตร้า">ลาวเอ็กตร้า</option>
+      <option value="นิเคอิเช้าVIP">นิเคอิเช้าVIP</option>
+      <option value="หุ้นนิเคอิเช้า">หุ้นนิเคอิเช้า</option>
+      <option value="จีนเช้าVIP">จีนเช้าVIP</option>
+      <option value="หุ้นจีนเช้า">หุ้นจีนเช้า</option>
+      <option value="ลาวTV">ลาวTV</option>
+      <option value="ฮั่งเส็งเช้าVIP">ฮั่งเส็งเช้าVIP</option>
+      <option value="หุ้นฮั่งเส็งเช้า">หุ้นฮั่งเส็งเช้า</option>
+      <option value="ฮานอยHD">ฮานอยHD</option>
+      <option value="ไต้หวันVIP">ไต้หวันVIP</option>
+      <option value="หุ้นไต้หวัน">หุ้นไต้หวัน</option>
+      <option value="ฮานอยสตาร์">ฮานอยสตาร์</option>
+      <option value="เกาหลีVIP">เกาหลีVIP</option>
+      <option value="หุ้นเกาหลี">หุ้นเกาหลี</option>
+      <option value="หุ้นนิเคอิบ่าย">หุ้นนิเคอิบ่าย</option>
+      <option value="นิเคอิบ่ายVIP">นิเคอิบ่ายVIP</option>
+      <option value="ลาวHD">ลาวHD</option>
+      <option value="หุ้นจีนบ่าย">หุ้นจีนบ่าย</option>
+      <option value="จีนบ่ายVIP">จีนบ่ายVIP</option>
+      <option value="หุ้นฮั่งเส็งบ่าย">หุ้นฮั่งเส็งบ่าย</option>
+      <option value="ฮั่งเส็งบ่ายVIP">ฮั่งเส็งบ่ายVIP</option>
+      <option value="ลาวสตาร์">ลาวสตาร์</option>
+      <option value="สิงคโปร์">สิงคโปร์</option>
+      <option value="ไทยเย็น">ไทยเย็น</option>
+      <option value="ฮานอยกาชาด">ฮานอยกาชาด</option>
+      <option value="สิงคโปร์VIP">สิงคโปร์VIP</option>
+      <option value="ฮานอยสามัคคี">ฮานอยสามัคคี</option>
+      <option value="ฮานอยพิเศษ">ฮานอยพิเศษ</option>
+      <option value="ฮานอยปกติ">ฮานอยปกติ</option>
+      <option value="ฮานอยพัฒนา">ฮานอยพัฒนา</option>
+      <option value="ฮานอยVIP">ฮานอยVIP</option>
+      <option value="ลาวพัฒนา">ลาวพัฒนา</option>
+      <option value="ลาวสามัคคี">ลาวสามัคคี</option>
+      <option value="ลาวVIP">ลาวVIP</option>
+      <option value="อังกฤษVIP">อังกฤษVIP</option>
+      <option value="ลาวสตาร์VIP">ลาวสตาร์VIP</option>
+      <option value="หุ้นอังกฤษ">หุ้นอังกฤษ</option>
+      <option value="หุ้นเยอรมัน">หุ้นเยอรมัน</option>
+      <option value="หุ้นรัสเซีย">หุ้นรัสเซีย</option>
+      <option value="ฮานอยเอ็กตร้า">ฮานอยเอ็กตร้า</option>
+      <option value="เยอรมันVIP">เยอรมันVIP</option>
+      <option value="ลาวกาชาด">ลาวกาชาด</option>
+      <option value="รัสเซียVIP">รัสเซียVIP</option>
+      <option value="ดาวโจนส์VIP">ดาวโจนส์VIP</option>
       <option value="ดาวโจนส์">ดาวโจนส์</option>
-      <option value="หวยลาว">หวยลาว</option>
-      <option value="หวยฮานอย">หวยฮานอย</option>
       <option value="หวยรัฐบาล">หวยรัฐบาล</option>
+      <option value="ออมสิน">ออมสิน</option>
     </select>
   </div>
 
