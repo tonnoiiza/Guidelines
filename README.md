@@ -128,6 +128,7 @@
       <option value="นิเคอิบ่ายVIP">นิเคอิบ่ายVIP</option>
       <option value="ลาวHD">ลาวHD</option>
       <option value="หุ้นจีนบ่าย">หุ้นจีนบ่าย</option>
+      <option value="ฮานอยTV">ฮานอยTV</option>	    
       <option value="จีนบ่ายVIP">จีนบ่ายVIP</option>
       <option value="หุ้นฮั่งเส็งบ่าย">หุ้นฮั่งเส็งบ่าย</option>
       <option value="ฮั่งเส็งบ่ายVIP">ฮั่งเส็งบ่ายVIP</option>
