@@ -20,6 +20,32 @@
       margin-top: 5px;
     }
 
+    /* จัดระเบียบช่องกรอกข้อมูลให้วางข้างกัน */
+    .input-row {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .input-field {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    textarea {
+      width: 280px;
+      height: 150px;
+    }
+
+    #extractedOutput {
+      background-color: #222;
+      color: #00c853; /* สีเขียวสว่างสำหรับผลลัพธ์ที่ตัดออกมา */
+      border: 1px solid #444;
+      font-weight: bold;
+    }
+
     button {
       margin-top: 15px;
       padding: 10px 20px;
@@ -55,10 +81,10 @@
       text-shadow: 2px 2px 5px #000;
     }
 
-	#lottery-header {
-	  top: 30px;
-	  font-size: 35px;
-	}
+    #lottery-header {
+      top: 30px;
+      font-size: 35px;
+    }
 
     #lottery-header span {
       display: inline-block;
@@ -70,27 +96,24 @@
       font-weight: 900;
     }
 
-	#lottery-date {
- 	 top: 110px;
- 	 font-size: 30px;
-	}
+    #lottery-date {
+      top: 110px;
+      font-size: 30px;
+    }
 
-	#lottery-content {
- 	 position: absolute;
-	  top: 55%;
-	  left: 50%;
-	  transform: translate(-50%, -50%); /* จัดกลางแนวตั้ง-แนวนอน */
-	  font-size: 40px;
-	  line-height: 1.9;
-	  padding: 0 30px;
-	  text-align: center;
-	  white-space: pre-line;
-	}
-    
     #lottery-content {
-	max-height: 580px;
-	overflow: hidden;
-	}
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 40px;
+      line-height: 1.9;
+      padding: 0 30px;
+      text-align: center;
+      white-space: pre-line;
+      max-height: 580px;
+      overflow: hidden;
+    }
   </style>
 </head>
 <body>
@@ -102,67 +125,75 @@
     <input type="file" accept="image/*" onchange="loadImage(event)">
   </div>
 
-  <div>
-    <label>วันที่:</label><br>
-    <input type="date" id="dateInput" onchange="updatePreview()">
+  <div class="input-row">
+    <div class="input-field">
+      <label>วันที่:</label>
+      <input type="date" id="dateInput" onchange="updatePreview()">
+    </div>
+    <div class="input-field">
+      <label>ประเภทหวย:</label>
+      <select id="lotterySelect" onchange="updatePreview()">
+        <option value="ลาวเอ็กตร้า">ลาวเอ็กตร้า</option>
+        <option value="นิเคอิเช้าVIP">นิเคอิเช้าVIP</option>
+        <option value="หุ้นนิเคอิเช้า">หุ้นนิเคอิเช้า</option>
+        <option value="จีนเช้าVIP">จีนเช้าVIP</option>
+        <option value="หุ้นจีนเช้า">หุ้นจีนเช้า</option>
+        <option value="ลาวTV">ลาวTV</option>
+        <option value="ฮั่งเส็งเช้าVIP">ฮั่งเส็งเช้าVIP</option>
+        <option value="หุ้นฮั่งเส็งเช้า">หุ้นฮั่งเส็งเช้า</option>
+        <option value="ฮานอยHD">ฮานอยHD</option>
+        <option value="ไต้หวันVIP">ไต้หวันVIP</option>
+        <option value="หุ้นไต้หวัน">หุ้นไต้หวัน</option>
+        <option value="ฮานอยสตาร์">ฮานอยสตาร์</option>
+        <option value="เกาหลีVIP">เกาหลีVIP</option>
+        <option value="หุ้นเกาหลี">หุ้นเกาหลี</option>
+        <option value="หุ้นนิเคอิบ่าย">หุ้นนิเคอิบ่าย</option>
+        <option value="นิเคอิบ่ายVIP">นิเคอิบ่ายVIP</option>
+        <option value="ลาวHD">ลาวHD</option>
+        <option value="หุ้นจีนบ่าย">หุ้นจีนบ่าย</option>
+        <option value="ฮานอยTV">ฮานอยTV</option>	    
+        <option value="จีนบ่ายVIP">จีนบ่ายVIP</option>
+        <option value="หุ้นฮั่งเส็งบ่าย">หุ้นฮั่งเส็งบ่าย</option>
+        <option value="ฮั่งเส็งบ่ายVIP">ฮั่งเส็งบ่ายVIP</option>
+        <option value="ลาวสตาร์">ลาวสตาร์</option>
+        <option value="สิงคโปร์">สิงคโปร์</option>
+        <option value="ไทยเย็น">ไทยเย็น</option>
+        <option value="ฮานอยกาชาด">ฮานอยกาชาด</option>
+        <option value="สิงคโปร์VIP">สิงคโปร์VIP</option>
+        <option value="ฮานอยสามัคคี">ฮานอยสามัคคี</option>
+        <option value="ฮานอยพิเศษ">ฮานอยพิเศษ</option>
+        <option value="ฮานอยปกติ">ฮานอยปกติ</option>
+        <option value="ฮานอยพัฒนา">ฮานอยพัฒนา</option>
+        <option value="ฮานอยVIP">ฮานอยVIP</option>
+        <option value="ลาวพัฒนา">ลาวพัฒนา</option>
+        <option value="ลาวสามัคคี">ลาวสามัคคี</option>
+        <option value="ลาวVIP">ลาวVIP</option>
+        <option value="อังกฤษVIP">อังกฤษVIP</option>
+        <option value="ลาวสตาร์VIP">ลาวสตาร์VIP</option>
+        <option value="หุ้นอังกฤษ">หุ้นอังกฤษ</option>
+        <option value="หุ้นเยอรมัน">หุ้นเยอรมัน</option>
+        <option value="หุ้นรัสเซีย">หุ้นรัสเซีย</option>
+        <option value="ฮานอยเอ็กตร้า">ฮานอยเอ็กตร้า</option>
+        <option value="เยอรมันVIP">เยอรมันVIP</option>
+        <option value="ลาวกาชาด">ลาวกาชาด</option>
+        <option value="รัสเซียVIP">รัสเซียVIP</option>
+        <option value="ดาวโจนส์VIP">ดาวโจนส์VIP</option>
+        <option value="ดาวโจนส์">ดาวโจนส์</option>
+        <option value="หวยรัฐบาล">หวยรัฐบาล</option>
+        <option value="ออมสิน">ออมสิน</option>
+      </select>
+    </div>
   </div>
 
-  <div>
-    <label>ประเภทหวย:</label><br>
-    <select id="lotterySelect" onchange="updatePreview()">
-      <option value="ลาวเอ็กตร้า">ลาวเอ็กตร้า</option>
-      <option value="นิเคอิเช้าVIP">นิเคอิเช้าVIP</option>
-      <option value="หุ้นนิเคอิเช้า">หุ้นนิเคอิเช้า</option>
-      <option value="จีนเช้าVIP">จีนเช้าVIP</option>
-      <option value="หุ้นจีนเช้า">หุ้นจีนเช้า</option>
-      <option value="ลาวTV">ลาวTV</option>
-      <option value="ฮั่งเส็งเช้าVIP">ฮั่งเส็งเช้าVIP</option>
-      <option value="หุ้นฮั่งเส็งเช้า">หุ้นฮั่งเส็งเช้า</option>
-      <option value="ฮานอยHD">ฮานอยHD</option>
-      <option value="ไต้หวันVIP">ไต้หวันVIP</option>
-      <option value="หุ้นไต้หวัน">หุ้นไต้หวัน</option>
-      <option value="ฮานอยสตาร์">ฮานอยสตาร์</option>
-      <option value="เกาหลีVIP">เกาหลีVIP</option>
-      <option value="หุ้นเกาหลี">หุ้นเกาหลี</option>
-      <option value="หุ้นนิเคอิบ่าย">หุ้นนิเคอิบ่าย</option>
-      <option value="นิเคอิบ่ายVIP">นิเคอิบ่ายVIP</option>
-      <option value="ลาวHD">ลาวHD</option>
-      <option value="หุ้นจีนบ่าย">หุ้นจีนบ่าย</option>
-      <option value="จีนบ่ายVIP">จีนบ่ายVIP</option>
-      <option value="หุ้นฮั่งเส็งบ่าย">หุ้นฮั่งเส็งบ่าย</option>
-      <option value="ฮั่งเส็งบ่ายVIP">ฮั่งเส็งบ่ายVIP</option>
-      <option value="ลาวสตาร์">ลาวสตาร์</option>
-      <option value="สิงคโปร์">สิงคโปร์</option>
-      <option value="ไทยเย็น">ไทยเย็น</option>
-      <option value="ฮานอยกาชาด">ฮานอยกาชาด</option>
-      <option value="สิงคโปร์VIP">สิงคโปร์VIP</option>
-      <option value="ฮานอยสามัคคี">ฮานอยสามัคคี</option>
-      <option value="ฮานอยพิเศษ">ฮานอยพิเศษ</option>
-      <option value="ฮานอยปกติ">ฮานอยปกติ</option>
-      <option value="ฮานอยพัฒนา">ฮานอยพัฒนา</option>
-      <option value="ฮานอยVIP">ฮานอยVIP</option>
-      <option value="ลาวพัฒนา">ลาวพัฒนา</option>
-      <option value="ลาวสามัคคี">ลาวสามัคคี</option>
-      <option value="ลาวVIP">ลาวVIP</option>
-      <option value="อังกฤษVIP">อังกฤษVIP</option>
-      <option value="ลาวสตาร์VIP">ลาวสตาร์VIP</option>
-      <option value="หุ้นอังกฤษ">หุ้นอังกฤษ</option>
-      <option value="หุ้นเยอรมัน">หุ้นเยอรมัน</option>
-      <option value="หุ้นรัสเซีย">หุ้นรัสเซีย</option>
-      <option value="ฮานอยเอ็กตร้า">ฮานอยเอ็กตร้า</option>
-      <option value="เยอรมันVIP">เยอรมันVIP</option>
-      <option value="ลาวกาชาด">ลาวกาชาด</option>
-      <option value="รัสเซียVIP">รัสเซียVIP</option>
-      <option value="ดาวโจนส์VIP">ดาวโจนส์VIP</option>
-      <option value="ดาวโจนส์">ดาวโจนส์</option>
-      <option value="หวยรัฐบาล">หวยรัฐบาล</option>
-      <option value="ออมสิน">ออมสิน</option>
-    </select>
-  </div>
-
-  <div>
-    <label>ข้อความแนวทาง:</label><br>
-    <textarea id="textInput" rows="8" placeholder="พิมพ์ตัวเลขหรือข้อความ..." oninput="updatePreview()"></textarea>
+  <div class="input-row">
+    <div class="input-field">
+      <label>ข้อความแนวทาง:</label>
+      <textarea id="textInput" rows="8" placeholder="พิมพ์ตัวเลขหรือข้อความ..." oninput="updatePreview()"></textarea>
+    </div>
+    <div class="input-field">
+      <label>ผลการตัดตัวเลขวิน:</label>
+      <textarea id="extractedOutput" rows="8" placeholder="จะแสดงผลเมื่อพิมพ์ 'วิน'..." readonly></textarea>
+    </div>
   </div>
 
   <button onclick="saveImage()">บันทึกรูป</button>
@@ -193,9 +224,30 @@
       const dateInput = document.getElementById('dateInput').value;
       const text = document.getElementById('textInput').value;
 
+      // --- ส่วนดึงข้อมูลวินและจัดรูปแบบ พร้อมเพิ่มชื่อประเภทหวยด้านหน้า ---
+      const lines = text.split('\n');
+      let resultText = "";
+      
+      lines.forEach(line => {
+        if (line.includes("วิน")) {
+          // ดึงเฉพาะตัวเลขออกมาจากบรรทัดนั้น
+          const nums = line.replace(/[^0-9]/g, ''); 
+          if (nums.length >= 4) {
+            // ตัด 4 ตัวแรกตามเงื่อนไข (1, 2 = รูด / 3, 4 = จับคู่)
+            const r1 = nums[0];
+            const r2 = nums[1];
+            const pair = nums.substring(2, 4);
+            // เพิ่มตัวแปร type ไว้หน้า รูด
+            resultText = `${type} รูด ${r1}-${r2} / จับคู่รูดกับ ${pair}`;
+          }
+        }
+      });
+      document.getElementById('extractedOutput').value = resultText;
+      // -------------------------------
+
       const dateObj = new Date(dateInput);
       const thaiMonths = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน",
-                          "กรกฎาคม", "สิงคมหา", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"];
+                          "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"];
       const dateStr = dateInput
         ? `วันที่ ${dateObj.getDate()} ${thaiMonths[dateObj.getMonth()]} ${dateObj.getFullYear() + 543}`
         : '';
